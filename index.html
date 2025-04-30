@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jemuel Cadayona - Software Developer/Engineer Portfolio. Showcasing my skills, projects, and services. Contact me for collaboration or inquiries.">
+    <title>Jemuel Cadayona - Software Developer/Engineer</title>
+    <link rel="shortcut icon" type="image/png" href="assets/img/portfolio.png" />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#10b981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <!-- Odometer CDN -->
+   <link rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1);
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -10px rgba(59, 130, 246, 0.15);
+        }
+        .timeline-dot::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background-color: #e5e7eb;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 24px;
+            z-index: -1;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s;
+        }
+        .custom-checkbox:checked {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+        }
+        .custom-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 6px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .custom-range {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 5px;
+            outline: none;
+        }
+        .custom-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #3b82f6;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .custom-range::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            background: #3b82f6;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .custom-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .switch-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e5e7eb;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .switch-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .switch-slider {
+            background-color: #3b82f6;
+        }
+        input:checked + .switch-slider:before {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-['Pacifico'] text-gray-800">Jem Cdyn</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-primary font-medium">About</a>
+                    <a href="#tech-stack" class="text-gray-600 hover:text-primary font-medium">Tech Stack</a>
+                    <a href="#projects" class="text-gray-600 hover:text-primary font-medium">Projects</a>
+                    <a href="#services" class="text-gray-600 hover:text-primary font-medium">Services</a>
+                    <a href="#experience" class="text-gray-600 hover:text-primary font-medium">Experience</a>
+                    <a href="#contact" class="block text-gray-600 hover:text-primary font-medium">Contact</a>
+                </nav>
+                
+                <div class="md:hidden flex items-center">
+                    <button type="button" id="menuBtn" class="w-10 h-10 flex items-center justify-center text-gray-600">
+                        <i class="ri-menu-line ri-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-4 space-y-3">
+                <a href="#about" class="block text-gray-600 hover:text-primary font-medium">About</a>
+                <a href="#tech-stack" class="block text-gray-600 hover:text-primary font-medium">Tech Stack</a>
+                <a href="#projects" class="block text-gray-600 hover:text-primary font-medium">Projects</a>
+                <a href="#services" class="block text-gray-600 hover:text-primary font-medium">Services</a>
+                <a href="#experience" class="block text-gray-600 hover:text-primary font-medium">Experience</a>
+                <a href="#contact" class="block text-gray-600 hover:text-primary font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20tech%20workspace%20with%20blue%20and%20soft%20gradient%20background%2C%20minimalist%20design%2C%20clean%20desk%20with%20computer%20monitors%2C%20soft%20lighting%2C%20abstract%20code%20elements%20floating%20in%20background%2C%20professional%20atmosphere%2C%20high%20quality%20digital%20art&width=1920&height=1080&seq=portfolio123&orientation=landscape'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="flex flex-col md:flex-row items-center py-20 md:py-32">
+                <div class="w-full md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2" data-wow="fade-up" data-wow-delay="100">
+                        Jemuel Cadayona
+                    </h1>
+                    <h1 class="text-1xl font-bold text-gray-500 mb-6 " id="typewriter">
+                        <span>SOFTWARE DEV / ENGR</span>
+                    </h1>
+                    
+                    <p class="text-md text-gray-700 mb-8 max-w-lg">
+                        Building innovative digital solutions with cutting-edge technologies. Transforming ideas into elegant, efficient, and scalable applications.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#projects" class="bg-primary text-white px-8 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-blue-600 transition text-center text-sm">View My Work</a>
+                        <a href="#services" class="bg-white text-primary border border-primary px-8 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-gray-50 transition text-center text-sm">Commissions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700">
+                    I'm Jemuel Cadayona, a self-taught software dev/engr and consultant at the <b>Provincial Systems AO, Capitol Site, Southern Leyte, PH</b>. Graduated Cum Laude with a degree in BS Information Technology.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-code-s-slash-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Web Development</h3>
+                    <p class="text-gray-700">
+                        Specializing in creating responsive, user-friendly websites and web applications using modern frameworks and technologies.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-database-2-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Backend Solutions</h3>
+                    <p class="text-gray-700">
+                        Building robust, scalable backend systems with PHP, Laravel, and efficient database management.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-terminal-box-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Full Stack Integration</h3>
+                    <p class="text-gray-700">
+                        Seamlessly connecting frontend and backend components to create cohesive, end-to-end solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech-stack" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">My Tech Stack</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700">
+                    The technologies and tools I use to bring ideas to life
+                </p>
+            </div>
+            
+            <div class="mb-16">
+                <h3 class="text-xl font-semibold text-gray-900 mb-6 text-center">Frontend</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-html5-line ri-2x text-orange-500"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">HTML5</h4>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-css3-line ri-2x text-blue-500"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">CSS3</h4>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-bootstrap-line ri-2x text-purple-600"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">Bootstrap 5</h4>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-palette-line ri-2x text-teal-500"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">Daisy UI</h4>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-tailwind-css-line ri-2x text-cyan-500"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">TailwindCSS</h4>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-javascript-line ri-2x text-yellow-500"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">JavaScript</h4>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-javascript-fill ri-2x text-blue-600"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">TypeScript</h4>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-vuejs-line ri-2x text-green-500"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">Vue.js</h4>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-code-box-line ri-2x text-gray-700"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">Alpine.js</h4>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-rocket-line ri-2x text-purple-500"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">Inertia.js</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-16">
+                <h3 class="text-xl font-semibold text-gray-900 mb-6 text-center">Backend</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-php-line ri-2x text-indigo-600"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">PHP</h4>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-server-line ri-2x text-red-500"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">Laravel</h4>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-flashlight-line ri-2x text-pink-500"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">Livewire</h4>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-braces-line ri-2x text-cyan-600"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">TensorFlow.js</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-16">
+                <h3 class="text-xl font-semibold text-gray-900 mb-6 text-center">Database, Tools & CI/CD</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-database-2-line ri-2x text-blue-500"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">MySQL</h4>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-database-line ri-2x text-green-600"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">MongoDB</h4>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-flashlight-fill ri-2x text-yellow-500"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">Vite</h4>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-newspaper-line ri-2x text-gray-700"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">Median.co</h4>
+                    </div>
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-git-merge-line ri-2x text-red-500"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">Git</h4>
+                    </div>
+                    <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center">
+                        <div class="w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="ri-github-fill ri-2x text-dark-500"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900">Github Actions</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700">
+                    A selection of my recent work and accomplishments
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-md transition duration-300">
+                    <div class="h-56 overflow-hidden">
+                        <img src="assets/projects/e-mercado.png" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">e-Mercado</h3>
+                        <p class="text-gray-700 mb-4">
+                            A full-featured online store with product management and a shopping cart, developed for the Province of Southern Leyte.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Bootstrap 5</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://www.e-mercado.southernleyte.org.ph/" class="text-primary hover:text-blue-700 font-medium flex items-center">
+                                <i class="ri-eye-line mr-1"></i> Live Demo
+                            </a>
+                            <a href="#" class="text-gray-700 hover:text-gray-900 font-medium flex items-center">
+                                <i class="ri-github-line mr-1"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-md transition duration-300">
+                    <div class="h-56 overflow-hidden">
+                        <img src="assets/projects/dota.png" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Document Tracking Assistant</h3>
+                        <p class="text-gray-700 mb-4">
+                            A comprehensive system for tracking documents and transactions using QR Code, developed for the Province of Southern Leyte.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Livewire</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://dts.southernleyte.org.ph/" class="text-primary hover:text-blue-700 font-medium flex items-center">
+                                <i class="ri-eye-line mr-1"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/cdynjm/Document-Tracker-Assistant" class="text-gray-700 hover:text-gray-900 font-medium flex items-center">
+                                <i class="ri-github-line mr-1"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-md transition duration-300">
+                    <div class="h-56 overflow-hidden">
+                        <img src="assets/projects/lms.png" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Legislative Management System</h3>
+                        <p class="text-gray-700 mb-4">
+                            A comprehensive system for managing legislative documents and transactions, developed for the Municipality of Sogod.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Bootstrap 5</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium flex items-center">
+                                <i class="ri-eye-line mr-1"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/cdynjm/Legislative-Management-System" class="text-gray-700 hover:text-gray-900 font-medium flex items-center">
+                                <i class="ri-github-line mr-1"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-md transition duration-300">
+                    <div class="h-56 overflow-hidden">
+                        <img src="assets/projects/als.png" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">ALS - Learners Progress Monitoring</h3>
+                        <p class="text-gray-700 mb-4">
+                            A system for monitoring the progress of ALS learners, developed for the Department of Education.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Livewire</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium flex items-center">
+                                <i class="ri-eye-line mr-1"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/cdynjm/ALS-Learners-Progress-Monitoring" class="text-gray-700 hover:text-gray-900 font-medium flex items-center">
+                                <i class="ri-github-line mr-1"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-md transition duration-300">
+                    <div class="h-56 overflow-hidden">
+                        <img src="assets/projects/tums.png" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Teachers Unified Management System</h3>
+                        <p class="text-gray-700 mb-4">
+                            A system for managing teacher information and transactions, developed for the Department of Education.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Livewire</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium flex items-center">
+                                <i class="ri-eye-line mr-1"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/cdynjm/Teachers-Unified-Management-System" class="text-gray-700 hover:text-gray-900 font-medium flex items-center">
+                                <i class="ri-github-line mr-1"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-md transition duration-300">
+                    <div class="h-56 overflow-hidden">
+                        <img src="assets/projects/mcms.png" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Municipal Crime Management System with Data Analytics</h3>
+                        <p class="text-gray-700 mb-4">
+                            A system for managing crime data and analytics, developed for the Municipality of Bontoc.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Livewire</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium flex items-center">
+                                <i class="ri-eye-line mr-1"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/cdynjm/Application-of-Data-Analytics-for-Municipal-Crime-Management-System-in-Bontoc-Southern-Leyte" class="text-gray-700 hover:text-gray-900 font-medium flex items-center">
+                                <i class="ri-github-line mr-1"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-md transition duration-300">
+                    <div class="h-56 overflow-hidden">
+                        <img src="assets/projects/southerncp.png" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Southern Comforts - Commercial Website</h3>
+                        <p class="text-gray-700 mb-4">
+                            A commercial website for Southern Comforts, showcasing their rooms and services.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">HTML</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">CSS 3</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Bootstrap 5</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://southerncp.vercel.app/" class="text-primary hover:text-blue-700 font-medium flex items-center">
+                                <i class="ri-eye-line mr-1"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/cdynjm/Southern-Comfort-Pensionne" class="text-gray-700 hover:text-gray-900 font-medium flex items-center">
+                                <i class="ri-github-line mr-1"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Services & Pricing</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700">
+                    Professional development services tailored to your needs
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                    <div class="bg-blue-50 p-8 text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Static Website</h3>
+                        <div class="text-3xl font-bold text-primary mt-4">₱5K - ₱10K</div>
+                        <p class="text-gray-600 mt-2">Starting price</p>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">Responsive website design</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">Interactive UI components</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">Cross-browser compatibility</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">2 weeks delivery</span>
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <a href="https://www.facebook.com/jem.cdyn3" class="w-full bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-blue-600 transition text-center block">Avail & Chat Me</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-md transform scale-105 z-10">
+                    <div class="bg-primary p-8 text-center">
+                        <div class="inline-block bg-white text-primary text-xs font-semibold px-3 py-1 !rounded-full mb-4">MOST POPULAR</div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Full Stack Development</h3>
+                        <div class="text-3xl font-bold text-white mt-4">₱18K - ₱20K</div>
+                        <p class="text-blue-100 mt-2">Exclusive for Students Only</p>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">Complete web application</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">Frontend & backend integration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">Database design & implementation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">User authentication & authorization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">API development</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">4 weeks delivery</span>
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <a href="https://www.facebook.com/jem.cdyn3" class="w-full bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-blue-600 transition text-center block">Avail & Chat Me</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                    <div class="bg-blue-50 p-8 text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Full Stack Development</h3>
+                        <div class="text-3xl font-bold text-primary mt-4">₱25K - ₱50K</div>
+                        <p class="text-gray-600 mt-2">Starting price</p>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">Complete web application</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">Frontend & backend integration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">Database design & implementation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">User authentication & authorization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">API development</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700">6-8 weeks delivery</span>
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <a href="https://www.facebook.com/jem.cdyn3" class="w-full bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-blue-600 transition text-center block">Avail & Chat Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-white p-8 rounded-lg shadow-sm">
+                <h3 class="text-xl font-semibold text-gray-900 mb-6">Custom Project Requirements?</h3>
+                <p class="text-gray-700 mb-6">
+                    Need something specific or have a unique project in mind? I offer custom solutions tailored to your exact requirements.
+                </p>
+                <a href="https://www.facebook.com/jem.cdyn3" class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-blue-600 transition inline-block">Chat Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Professional Experience</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700">
+                    My journey in software development
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    
+                    <div class="mb-12 md:mb-16 relative">
+                        <div class="flex flex-col md:flex-row items-start">
+                            <div class="md:w-1/3 mb-4 md:mb-0">
+                                <div class="bg-blue-100 text-primary text-sm font-semibold px-4 py-1 rounded-full inline-block mb-2">2024 - Present</div>
+                                <h3 class="text-xl font-semibold text-gray-900">Software Developer/Engineer</h3>
+                                <p class="text-gray-700">Provincial Systems AO</p>
+                            </div>
+                            <div class="md:w-2/3 md:pl-8">
+                                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                                    <p class="text-gray-700 mb-4">
+                                        Leading the development of enterprise-level web applications using Laravel, Vue.js, and TailwindCSS. Implementing complex database architectures and optimizing application performance.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Vue.js</span>
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">TailwindCSS</span>
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Livewire</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-2">Key Achievements:</h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>Reduced application load time by 40% through code optimization</li>
+                                            <li>Implemented CI/CD pipeline reducing deployment time by 60%</li>
+                                            <li>Developed projects intended for the offices daily use</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-12 md:mb-16 relative">
+                        <div class="flex flex-col md:flex-row items-start">
+                            <div class="md:w-1/3 mb-4 md:mb-0">
+                                <div class="bg-blue-100 text-primary text-sm font-semibold px-4 py-1 rounded-full inline-block mb-2">2023 - 2024</div>
+                                <h3 class="text-xl font-semibold text-gray-900">Full Stack Developer</h3>
+                                <p class="text-gray-700">Freelance</p>
+                            </div>
+                            <div class="md:w-2/3 md:pl-8">
+                                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                                    <p class="text-gray-700 mb-4">
+                                        Developed and maintained multiple client websites and web applications.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">PHP</span>
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Bootstrap</span>
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Livewire</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-2">Key Achievements:</h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>Developed multiple system projects for specific institutions</li>
+                                            <li>Learned new tech stacks and frameworks</li>
+                                            <li>Improved offered services to each client</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700">
+                    Have a project in mind? Let's discuss how I can help bring your ideas to life
+                </p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
+                    <div class="md:col-span-1">
+                        <div class="bg-white p-8 rounded-lg shadow-sm h-full">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-6">Contact Information</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-mail-line text-primary"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-sm font-medium text-gray-500 mb-1">Email</h4>
+                                        <p class="text-gray-900">cdynjm@gmail.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-phone-line text-primary"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-sm font-medium text-gray-500 mb-1">Phone</h4>
+                                        <p class="text-gray-900">+63 927 502 1810</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-map-pin-line text-primary"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-sm font-medium text-gray-500 mb-1">Location</h4>
+                                        <p class="text-gray-900">Bontoc, Southern Leyte, PH</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 pt-8 border-t border-gray-200">
+                                <h4 class="text-sm font-medium text-gray-500 mb-4">Connect with me</h4>
+                                <div class="flex space-x-4">
+                                    <a href="https://github.com/cdynjm" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition">
+                                        <i class="ri-github-fill"></i>
+                                    </a>
+                                    <a href="https://www.facebook.com/jem.cdyn3" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition">
+                                        <i class="ri-facebook-box-fill"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/jemuel-cadayona-60b128318/" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition">
+                                        <i class="ri-linkedin-box-fill"></i>
+                                    </a>
+                                    <a href="https://www.tiktok.com/@jemcdyn" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition">
+                                        <i class="ri-tiktok-fill"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-1">
+                    <h3 class="text-2xl font-['Pacifico'] text-white mb-6">Jemuel Cadayona</h3>
+                    <p class="text-gray-400 mb-6">
+                        Transforming ideas into elegant digital solutions with modern technologies and best practices.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/cdynjm" class="text-gray-400 hover:text-white transition">
+                            <i class="ri-github-fill ri-lg"></i>
+                        </a>
+                        <a href="https://www.facebook.com/jem.cdyn3" class="text-gray-400 hover:text-white transition">
+                            <i class="ri-facebook-box-fill ri-lg"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jemuel-cadayona-60b128318/" class="text-gray-400 hover:text-white transition">
+                            <i class="ri-linkedin-box-fill ri-lg"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@jemcdyn" class="text-gray-400 hover:text-white transition">
+                            <i class="ri-tiktok-fill ri-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="#tech-stack" class="text-gray-400 hover:text-white transition">Tech Stack</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#experience" class="text-gray-400 hover:text-white transition">Experience</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Full Stack Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Static Websites</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-mail-line text-gray-400 mt-1 mr-3"></i>
+                            <span class="text-gray-400">cdynjm@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-phone-line text-gray-400 mt-1 mr-3"></i>
+                            <span class="text-gray-400">+63 927 502 1810</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line text-gray-400 mt-1 mr-3"></i>
+                            <span class="text-gray-400">Bontoc, Southern Leyte, PH</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2025 Jemuel Cadayona. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                
+                // Change icon based on menu state
+                const icon = menuBtn.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('ri-close-line');
+                    icon.classList.add('ri-menu-line');
+                } else {
+                    icon.classList.remove('ri-menu-line');
+                    icon.classList.add('ri-close-line');
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('ri-close-line');
+                    icon.classList.add('ri-menu-line');
+                });
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Budget range slider
+            const budgetSlider = document.getElementById('budget');
+            const budgetValue = document.getElementById('budget-value');
+            
+            budgetSlider.addEventListener('input', function() {
+                const value = parseInt(this.value);
+                budgetValue.textContent = `₱${value.toLocaleString()}`;
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Back to top button
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.remove('opacity-0', 'invisible');
+                    backToTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopBtn.classList.remove('opacity-100', 'visible');
+                    backToTopBtn.classList.add('opacity-0', 'invisible');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
